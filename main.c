@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define option_size 2
+#define opt_class 3
 
 /* Cleans the current terminal */
 void clear_term() {
-    system("cls");
+    system("clear");
 }
 
 void print_options(const char **opt, int opt_size, int *slc)
@@ -29,12 +29,11 @@ void print_options(const char **opt, int opt_size, int *slc)
 int main() 
 {
     int slc;
-    const char *opt[option_size] =
+    const char *opt[opt_class] =
     { 
 	"Moverse entre carpetas",
 	"Editar archivos de texto",
-	"Instalacion de programas externos"
-	""
+	"Instalacion de programas externos",
     };
 
     clear_term();
@@ -46,7 +45,7 @@ int main()
 
     print_options(
 	opt,
-	option_size,
+	opt_class,
 	&slc
     );
 
