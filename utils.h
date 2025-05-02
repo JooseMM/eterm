@@ -3,9 +3,10 @@
 #define MATH_UTILS_H
 
 void select_options(const char **opt, int opt_size, int *slc);
-void clear_term();
-void clear_buffer();
+void cls_term();
+void cls_buf();
 void change_dir(int *slc);
+int safe_cmd(char *cmd, char *ban[2], int banlen);
 //
 // Define a function pointer type
 typedef void (*fun_ptr)(int *slc);
