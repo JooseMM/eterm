@@ -1,29 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "utils.h"
 
 #define option_size 2
 
 /* Cleans the current terminal */
 void clear_term() {
     system("cls");
-}
-
-void print_options(const char **opt, int opt_size, int *slc)
-{
-    int i;
-
-    printf("\nOpciones:\n");
-    printf("\n");
-
-    for(i = 0; i < opt_size; i++) 
-    {
-	printf("%d. %s\n", i + 1, opt[i]);
-    }
-
-    printf("\nIngresa el numero de la opcion deseada: ");
-    scanf("%d", slc);
-
-    return;
 }
 
 int main() 
@@ -33,8 +16,7 @@ int main()
     { 
 	"Moverse entre carpetas",
 	"Editar archivos de texto",
-	"Instalacion de programas externos"
-	""
+	"Instalacion de programas externos",
     };
 
     clear_term();
