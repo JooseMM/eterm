@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include "utils.h"
 
-#define option_size 2
+#define opt_class 3
 
 /* Cleans the current terminal */
 void clear_term() {
-    system("cls");
+    system("clear");
 }
 
 int main() 
 {
     int slc;
-    const char *opt[option_size] =
+    const char *opt[opt_class] =
     { 
 	"Moverse entre carpetas",
 	"Editar archivos de texto",
@@ -28,7 +28,7 @@ int main()
 
     print_options(
 	opt,
-	option_size,
+	opt_class,
 	&slc
     );
 
