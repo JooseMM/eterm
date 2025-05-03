@@ -4,9 +4,6 @@
 #include <string.h>
 #include <regex.h>
 
-/* array of functions type */
-typedef void (*fun_array)(int *);
-
 /* print options */
 void select_options(const char **opt, int opt_size, int *slc) 
 {
@@ -42,23 +39,52 @@ void cls_buf()
 	while ((getchar()) != '\n');
 }
 
-int safe_cmd(char *cmd, char *ban[2], int len)
+int regex(char *cmd, char **ban, int len)
 {
 	regex_t reg;
-	int res;
+	int res = 1;
 
 	/* remove new line */
 	cmd[strcspn(cmd, "\n")]= '\0';
 
 	for(int i=0;i<len;i++) {
 		/* create regex */
-		res = regcomp(&reg, ban[i], 0);
+		regcomp(&reg, ban[i], 0);
 		/* execute regex */
-		res = regexec(&reg, cmd, 0, NULL, 0);
-
-		if(res == 0)
-			return 1;
+		if(regexec(&reg, cmd, 0, NULL, 0) == 0) {
+			res = 0;
+		}
 	}
 
-	return 0;
+	return res;
+}
+
+int playground(
+	char *cmd,
+	char **ban_cmd,
+	int ban_len,
+	char **ok_cmd, 
+	int ok_len
+) 
+{
+	int res = 1;
+
+	while (res != 0) {
+		fgets(cmd, 100, stdin);
+
+		/* remove new line */
+		cmd[strcspn(cmd, "\n")]= '\0';
+
+		int bad = regex(cmd, ban_cmd, ban_len);
+		int ok = regex(cmd, ok_cmd, ok_len);
+
+		if(bad != 0 && ok == 0) {
+			printf("\nGenial! Aqui esta tu resultado:\n\n");
+			res = system(cmd);
+		}
+		else {
+			printf("\nUps! No escribiste el commando correcto, vuelve a intentarlo\n\n");
+		}
+	}
+	return res;
 }

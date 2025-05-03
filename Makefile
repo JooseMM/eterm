@@ -4,7 +4,7 @@ CFLAGS = -Wall
 all: compile run
 
 compile: main.c utils.c utils.h
-	$(CC) $(CFLAGS) -o program main.c utils.c change_dir.c
+	$(CC) $(CFLAGS) -o program main.c utils.c ./classes/change_dir/change_dir.c
 
 run: compile
 	./program
