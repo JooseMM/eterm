@@ -1,6 +1,4 @@
-const char *class_two = 
-"Primero, veamos un resumen del sistema de carpetas en Linux. En este sistema operativo,
-"Primero, un resumen del sistema de carpetas en Linux. En este sistema operativo,
+
 const char *class_two = 
 	"Empecemos con un pequeño tutorial para moverte entre carpetas:\n"
 	"\n"

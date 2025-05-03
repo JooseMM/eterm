@@ -11,4 +11,4 @@ enum class_id {
 	FILE_MODIFICATION = 1,
 	PACKAGE_INSTALLATION = 2 
 };
-
+extern const char *pwd;

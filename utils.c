@@ -67,9 +67,14 @@ int playground(
 	int ok_len
 ) 
 {
-	int res = 1;
+	int res = -1;
+	char err[] = "\nUps! No escribiste el commando correcto, vuelve a intentarlo\n\n";
 
 	while (res != 0) {
+		if(res>=1)
+			printf("%s", err);
+
+		printf("$ ");
 		fgets(cmd, 100, stdin);
 
 		/* remove new line */
@@ -78,13 +83,15 @@ int playground(
 		int bad = regex(cmd, ban_cmd, ban_len);
 		int ok = regex(cmd, ok_cmd, ok_len);
 
-		if(bad != 0 && ok == 0) {
-			printf("\nGenial! Aqui esta tu resultado:\n\n");
-			res = system(cmd);
+		if(bad == 0 || ok != 0) {
+			printf("%s", err);
+			continue;
 		}
-		else {
-			printf("\nUps! No escribiste el commando correcto, vuelve a intentarlo\n\n");
-		}
+
+		res = system(cmd);
+
+		if(res != 0)
+			printf("%s", err);
 	}
 	return res;
 }
