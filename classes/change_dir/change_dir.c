@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 const char *pwd = 
+"Genial! Aprendamos a movernos entre carpetas.\n\n"
 "Primero, veamos un resumen del sistema de carpetas en Linux.\n\n"
 "Aca las carpetas se organizan en una estructura jerárquica que comienza\n"
 "desde la raíz, representada por '/'. Esta es la carpeta principal de todo el sistema.\n\n"

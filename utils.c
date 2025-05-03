@@ -68,7 +68,8 @@ int playground(
 ) 
 {
 	int res = -1;
-	char err[] = "\nUps! No escribiste el commando correcto, vuelve a intentarlo\n\n";
+	char err[] = 
+		"\nUps! No escribiste el commando correcto, vuelve a intentarlo\n\n";
 
 	while (res != 0) {
 		if(res>=1)
@@ -88,6 +89,7 @@ int playground(
 			continue;
 		}
 
+		printf("\n");
 		res = system(cmd);
 
 		if(res != 0)
