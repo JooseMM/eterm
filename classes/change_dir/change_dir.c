@@ -5,7 +5,6 @@
 
 void change_dir(int *slc) 
 {
-	int res = -1;
 	char cmd[255];
 	char *ban[3] = { "shutdown", "reboot", "rm" };
 	char *ok[1] = { "ls" };

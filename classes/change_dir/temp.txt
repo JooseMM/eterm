@@ -1,0 +1,8 @@
+Primero, veamos un resumen del sistema de carpetas en Linux. En este sistema operativo, 
+las carpetas se organizan en una estructura jerárquica que comienza desde la raíz, representada por '/'.
+Esta es la carpeta principal de todo el sistema.
+
+Cuando abres una terminal, por lo general te ubicás automáticamente en la carpeta personal de tu usuario.
+
+Si quires saber exactamente en qué carpeta estás, puedes usar el comando pwd,
+que significa print working directory (imprimir directorio actual).
