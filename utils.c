@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include <regex.h>
 
 /* array of functions type */
 typedef void (*fun_array)(int *);
@@ -41,13 +42,21 @@ void cls_buf()
 	while ((getchar()) != '\n');
 }
 
-/* change this for regex later */
-int safe_cmd(char *cmd, char *ban[2], int banlen)
+int safe_cmd(char *cmd, char *ban[2], int len)
 {
+	regex_t reg;
+	int res;
+
+	/* remove new line */
 	cmd[strcspn(cmd, "\n")]= '\0';
 
-	for(int i=0;i<banlen;i++) {
-		if(strcmp(ban[i], cmd) == 0)
+	for(int i=0;i<len;i++) {
+		/* create regex */
+		res = regcomp(&reg, ban[i], 0);
+		/* execute regex */
+		res = regexec(&reg, cmd, 0, NULL, 0);
+
+		if(res == 0)
 			return 1;
 	}
 

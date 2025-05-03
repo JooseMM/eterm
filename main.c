@@ -20,7 +20,7 @@ int main() {
 
 	cls_term();
 	printf("Hola! Iniciando tu practica de linea de comandos.\n");
-	printf("Aqui aprenderas los comandos esenciales para controlar tu computadora solo con la terminal!.\n");
+	printf("Aqui aprenderas los comandos esenciales para controlar tu computadora\nsolo con la terminal!.\n");
   	printf("\nQue quieres practicar hoy?\n");
 	select_options(opt, class_opt, &slc);
 
@@ -30,7 +30,7 @@ int main() {
 	if(temp < class_opt && temp >= 0) 
 		func[temp](&slc);
 
-	printf("\nTerminaste el programa! Nos vemos\n");
+	printf("\nTerminaste el programa! Espero volver a verte\n");
 
   	return 0;
 }
