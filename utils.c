@@ -13,7 +13,7 @@ void select_options(const char **opt, int opt_size, int *slc)
 	printf("\n");
 
 	for(i = 0; i < opt_size; i++) {
-		printf("%d. %s\n", i + 1, opt[i]);
+		printf("\033[40m%d. \033[32m%s\033[0m\n", i + 1, opt[i]);
 	}
 
 	printf("\nIngresa el numero de la opcion deseada: ");

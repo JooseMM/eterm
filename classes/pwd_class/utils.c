@@ -1,4 +1,3 @@
-
 const char *class_two = 
 	"Empecemos con un pequeño tutorial para moverte entre carpetas:\n"
 	"\n"

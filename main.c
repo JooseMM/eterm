@@ -3,14 +3,14 @@
 
 #define class_opt 3
 
-extern void change_dir(int *slc);
+extern void pwd_class(int *slc);
 
 int main() {
 	int slc;
 	/* an array of function pointers */
 	fun_ptr func[class_opt];
 
-	func[CHANGE_DIR] = change_dir;
+	func[PWD_CLASS] = pwd_class;
 
 	const char *opt[class_opt] = {
 		"Moverse entre carpetas",
